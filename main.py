@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from scipy.stats import linregress
+#from scipy.stats import linregress
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
