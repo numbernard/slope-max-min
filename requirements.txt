@@ -1,4 +1,4 @@
 streamlit 
-scipy.stats
-sklearn.linear_model
-LinearRegression
+scipy
+scikit-learn
+
