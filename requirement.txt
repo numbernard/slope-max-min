@@ -3,6 +3,4 @@ pandas
 numpy
 matplotlib.pyplot
 scipy
-sklearn.linear_model
-linregress
-LinearRegression
+sklearn
