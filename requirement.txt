@@ -1,2 +1,6 @@
 streamlit
 pandas
+numpy
+matplotlib.pyplot
+scipy.stats
+sklearn.linear_model
