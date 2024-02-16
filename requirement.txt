@@ -4,3 +4,5 @@ numpy
 matplotlib.pyplot
 scipy.stats
 sklearn.linear_model
+linregress
+LinearRegression
