@@ -1,2 +1,3 @@
 streamlit 
-scipy
+scipy.stats
+sklearn.linear_model
