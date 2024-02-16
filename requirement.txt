@@ -2,7 +2,7 @@ streamlit
 pandas
 numpy
 matplotlib.pyplot
-scipy.stats
+scipy
 sklearn.linear_model
 linregress
 LinearRegression
