@@ -1,4 +1,4 @@
 streamlit 
 scipy
-sklearn
+scikit-learn
 
