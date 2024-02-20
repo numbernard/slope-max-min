@@ -2,3 +2,4 @@ streamlit
 scipy
 scikit-learn
 matplotlib
+pandas
