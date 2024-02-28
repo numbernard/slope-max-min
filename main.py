@@ -134,7 +134,7 @@ if file:
     yerrors = df1[:,2]
     n=len(yerrors)
     slope, intercept, r_value, p_value, std_err = linregress(data[:,0], data[:,1])
-    if df1[:,1].mean()<0.01:
+    if df1[:,1].mean()<0.1:
         st.write("slope for best fit : {:.3f}".format(slope))
         st.write("intercept for best fit {:.3f}: ".format(intercept))
         st.write("R square : {:.3f}".format(r_value))
@@ -150,7 +150,7 @@ if file:
     data,yerrors,slope1,intercept1=find_max_slope(data,yerrors,1000)
     while slope1==False:
       data,yerrors,slope1,intercept1=find_max_slope(data,yerrors,1000)
-    if df1[:,1].mean()<0.01:
+    if df1[:,1].mean()<0.1:
         st.write("slope max : {:.3f}".format(slope1))
     else:
         st.write("slope max : {:.2f}".format(slope1))
@@ -170,7 +170,7 @@ if file:
     data,yerrors,slope2,intercept2=find_min_slope(data,yerrors,1000)
     while slope2==False:
       data,yerrors,slope2,intercept2=find_min_slope(data,yerrors,1000)
-    if df1[:,1].mean()<0.01:
+    if df1[:,1].mean()<0.1:
         st.write("slope min : {:.3f}".format(slope2))
     else:
         st.write("slope min : {:.2f}".format(slope2))
@@ -184,7 +184,7 @@ if file:
 # Plot
     yerrors = df1[:,2]
     plt.errorbar(x, y, yerr=yerrors, fmt='o', color='r')
-    if df1[:,1].mean()<0.01:
+    if df1[:,1].mean()<0.1:
         plt.plot(x, fitline, label=f"Fit line: {reg[0]:.3f}x + {reg[1]:.3f}")
         plt.plot(x, b + m*x, label=f"Fit slope min: {m:.3f}x + {b:.3f}")
         plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.3f}x + {b1:.3f}")
