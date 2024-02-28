@@ -134,9 +134,15 @@ if file:
     yerrors = df1[:,2]
     n=len(yerrors)
     slope, intercept, r_value, p_value, std_err = linregress(data[:,0], data[:,1])
-    st.write("slope for best fit : {:.2f}".format(slope))
-    st.write("intercept for best fit {:.2f}: ".format(intercept))
-    st.write("R square : {:.2f}".format(r_value))
+    if df1[:,1].mean<0.01:
+        st.write("slope for best fit : {:.3f}".format(slope))
+        st.write("intercept for best fit {:.3f}: ".format(intercept))
+        st.write("R square : {:.3f}".format(r_value))
+    else:
+        st.write("slope for best fit : {:.2f}".format(slope))
+        st.write("intercept for best fit {:.2f}: ".format(intercept))
+        st.write("R square : {:.2f}".format(r_value))
+
     #data1 = np.array([[data[0, 0], data[0, 1] + yerrors[0]], [data[n-1, 0], data[n-1, 1] - yerrors[n-1]]])
     #data2 = np.array([[data[0, 0], data[0, 1] - yerrors[0]], [data[n-1, 0], data[n-1, 1] + yerrors[n-1]]])
 
@@ -144,8 +150,10 @@ if file:
     data,yerrors,slope1,intercept1=find_max_slope(data,yerrors,1000)
     while slope1==False:
       data,yerrors,slope1,intercept1=find_max_slope(data,yerrors,1000)
-
-    st.write("slope max : {:.2f}".format(slope1))
+    if df1[:,1].mean<0.01:
+        st.write("slope max : {:.3f}".format(slope1))
+    else:
+        st.write("slope max : {:.2f}".format(slope1))
     #x, y = data[:, 0], data[:, 1]
 
     # Fit line
@@ -162,8 +170,10 @@ if file:
     data,yerrors,slope2,intercept2=find_min_slope(data,yerrors,1000)
     while slope2==False:
       data,yerrors,slope2,intercept2=find_min_slope(data,yerrors,1000)
-
-    st.write("slope min : {:.2f}".format(slope2))
+    if df1[:,1].mean<0.01:
+        st.write("slope min : {:.3f}".format(slope2))
+    else:
+        st.write("slope min : {:.2f}".format(slope2))
     #x, y = data[:, 0], data[:, 1]
 
     # Fit line
@@ -174,11 +184,17 @@ if file:
 # Plot
     yerrors = df1[:,2]
     plt.errorbar(x, y, yerr=yerrors, fmt='o', color='r')
-    plt.plot(x, fitline, label=f"Fit line: {reg[0]:.2f}x + {reg[1]:.2f}")
-    plt.plot(x, b + m*x, label=f"Fit slope min: {m:.2f}x + {b:.2f}")
-    plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.2f}x + {b1:.2f}")
+    if df1[:,1].mean<0.01:
+        plt.plot(x, fitline, label=f"Fit line: {reg[0]:.3f}x + {reg[1]:.3f}")
+        plt.plot(x, b + m*x, label=f"Fit slope min: {m:.3f}x + {b:.3f}")
+        plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.3f}x + {b1:.3f}")
+    else:
+        plt.plot(x, fitline, label=f"Fit line: {reg[0]:.2f}x + {reg[1]:.2f}")
+        plt.plot(x, b + m*x, label=f"Fit slope min: {m:.2f}x + {b:.2f}")
+        plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.2f}x + {b1:.2f}")
     plt.legend()
     plt.xlabel("x")
     plt.ylabel("y")
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.pyplot(plt.show())
+
