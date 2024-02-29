@@ -139,8 +139,8 @@ if file:
         st.write("intercept for best fit {:.4f}: ".format(intercept))
         st.write("R square : {:.4f}".format(r_value))
     else:
-        st.write("slope for best fit : {:.3f}".format(slope))
-        st.write("intercept for best fit {:.3f}: ".format(intercept))
+        st.write("slope for best fit : {:.4f}".format(slope))
+        st.write("intercept for best fit {:.4f}: ".format(intercept))
         st.write("R square : {:.3f}".format(r_value))
 
     #data1 = np.array([[data[0, 0], data[0, 1] + yerrors[0]], [data[n-1, 0], data[n-1, 1] - yerrors[n-1]]])
@@ -153,7 +153,7 @@ if file:
     if df1[:,1].mean()<0.1:
         st.write("slope max : {:.4f}".format(slope1))
     else:
-        st.write("slope max : {:.3f}".format(slope1))
+        st.write("slope max : {:.4f}".format(slope1))
     #x, y = data[:, 0], data[:, 1]
 
     # Fit line
@@ -173,7 +173,7 @@ if file:
     if df1[:,1].mean()<0.1:
         st.write("slope min : {:.4f}".format(slope2))
     else:
-        st.write("slope min : {:.3f}".format(slope2))
+        st.write("slope min : {:.4f}".format(slope2))
     #x, y = data[:, 0], data[:, 1]
 
     # Fit line
