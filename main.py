@@ -190,8 +190,8 @@ if file:
         plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.4f}x + {b1:.4f}")
     else:
         plt.plot(x, fitline, label=f"Fit line: {reg[0]:.4f}x + {reg[1]:.3f}")
-        plt.plot(x, b + m*x, label=f"Fit slope min: {m:.3f}x + {b:.3f}")
-        plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.3f}x + {b1:.3f}")
+        plt.plot(x, b + m*x, label=f"Fit slope min: {m:.4f}x + {b:.3f}")
+        plt.plot(x, b1 + m1*x, label=f"Fit slope max: {m1:.4f}x + {b1:.3f}")
     plt.legend()
     plt.xlabel("x")
     plt.ylabel("y")
