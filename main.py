@@ -136,15 +136,15 @@ if file:
     slope, intercept, r_value, p_value, std_err = linregress(data[:,0], data[:,1])
     if df1[:,1].mean()<0.1:
         st.write("slope for best fit : {:.4f}".format(slope))
-        st.write("intercept for best fit {:.4f}: ".format(intercept))
+        st.write("intercept for best fit {:.4f}".format(intercept))
         st.write("R square : {:.4f}".format(r_value))
     elif df1[:,1].mean()<1: 
         st.write("slope for best fit : {:.4f}".format(slope))
-        st.write("intercept for best fit {:.4f}: ".format(intercept))
+        st.write("intercept for best fit {:.4f}".format(intercept))
         st.write("R square : {:.3f}".format(r_value))
     else:
         st.write("slope for best fit : {:.2f}".format(slope))
-        st.write("intercept for best fit {:.2f}: ".format(intercept))
+        st.write("intercept for best fit {:.2f}".format(intercept))
         st.write("R square : {:.2f}".format(r_value))
 
     #data1 = np.array([[data[0, 0], data[0, 1] + yerrors[0]], [data[n-1, 0], data[n-1, 1] - yerrors[n-1]]])
@@ -157,7 +157,7 @@ if file:
     if df1[:,1].mean()<0.1:
         st.write("slope max : {:.4f}".format(slope1))
     else:
-        st.write("slope max : {:.4f}".format(slope1))
+        st.write("slope max : {:.2f}".format(slope1))
     #x, y = data[:, 0], data[:, 1]
 
     # Fit line
