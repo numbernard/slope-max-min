@@ -134,7 +134,11 @@ if file:
     yerrors = df1[:,2]
     n=len(yerrors)
     slope, intercept, r_value, p_value, std_err = linregress(data[:,0], data[:,1])
-    if df1[:,1].mean<0.01:
+    if df1[:,1].mean()<0.01:
+        st.write("slope for best fit : {:.4f}".format(slope))
+        st.write("intercept for best fit {:.4f}: ".format(intercept))
+        st.write("R square : {:.4f}".format(r_value))
+    elif df1[:,1].mean()<0.1:
         st.write("slope for best fit : {:.3f}".format(slope))
         st.write("intercept for best fit {:.3f}: ".format(intercept))
         st.write("R square : {:.3f}".format(r_value))
