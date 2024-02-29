@@ -151,6 +151,9 @@ if file:
     #data2 = np.array([[data[0, 0], data[0, 1] - yerrors[0]], [data[n-1, 0], data[n-1, 1] + yerrors[n-1]]])
 
 #slope max
+    data=df1[:,0:2]
+    yerrors = df1[:,2]
+    x, y = data[:, 0], data[:, 1]
     data,yerrors,slope1,intercept1=find_max_slope(data,yerrors,1000)
     while slope1==False:
       data,yerrors,slope1,intercept1=find_max_slope(data,yerrors,1000)
